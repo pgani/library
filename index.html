@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Library</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><h1>Pete's Library</h1></li>
+            <li><button>Add book +</button></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="card">
+            <h2>The Hobbit</h2>
+            <h3>J.R.R. Tolkien</h3>
+            <h4>320 pages</h4>
+            <button>Read</button>
+            <a href="http://" target="_blank" rel="noopener noreferrer">x</a>
+        </div>
+    </div>
+
+    <div class="popup-background">
+        <div class="popup-form">
+            <form action="" method="post">
+                <ul>
+                    <li>
+                        <h2>Add new book</h2>
+                    </li>
+                    <li>
+                        <input type="text" placeholder="Title*">
+                    </li>
+                    <li>
+                        <input type="text" placeholder="Author*">
+                    </li>
+                    <li>
+                        <input type="text" placeholder="Number of pages*">
+                    </li>
+                    <li>
+                        <label for="haveRead">I've read this book*</label>
+                        <input type="checkbox" id="haveRead">
+                    </li>
+                    <li>
+                        <button type="button">Add book</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
