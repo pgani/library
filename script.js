@@ -9,9 +9,33 @@ function Book(title, author, pages, read) {
     };
 }
 
-function addBookToLibrary() {
-    
+//Add display/hide form
+const form = document.getElementById("popup-background");
+
+function displayForm() {
+    form.style.display = "block";
 }
+
+const showForm = document.getElementById("btn-show");
+showForm.addEventListener("click", displayForm);
+
+//Add to array function;
+function addBookToLibrary() {
+    const title = document.getElementById("title");
+    const author = document.getElementById("author");
+    const pages = document.getElementById("pages");
+    const read = document.getElementById("read");
+
+    const newBook = new Book(title.value, author.value, pages.value, read.value);
+
+    myLibrary.push(newBook);
+
+    form.style.display = "none";
+}
+
+const addBook = document.getElementById("btn-add");
+addBook.addEventListener("click", addBookToLibrary);
+
 
 function displayBooks() {
 

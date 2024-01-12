@@ -98,7 +98,9 @@ nav button:active {
     text-decoration: none;
 }
 
-.popup-background {
+#popup-background {
+    display: none;
+
     position: absolute;
     top: 0;
     width: 100%;
