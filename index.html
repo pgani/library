@@ -10,18 +10,18 @@
 <body>
     <nav>
         <ul>
-            <li><h1>Pete's Library</h1></li>
+            <li><h1>Library</h1></li>
             <li><button id="btn-show">Add book +</button></li>
         </ul>
     </nav>
 
     <div class="content">
         <div class="card">
-            <h2>The Hobbit</h2>
-            <h3>J.R.R. Tolkien</h3>
-            <h4>320 pages</h4>
-            <button>Read</button>
-            <a href="http://" target="_blank" rel="noopener noreferrer">x</a>
+            <h2 id="title">The Hobbit</h2>
+            <h3 id="author">J.R.R. Tolkien</h3>
+            <h4 id="pages">320 pages</h4>
+            <button id="read">Read</button>
+            <a href="" rel="noopener noreferrer">&#10006;</a>
         </div>
     </div>
 
@@ -33,17 +33,17 @@
                         <h2>Add new book</h2>
                     </li>
                     <li>
-                        <input type="text" required id="title" placeholder="Title*">
+                        <input type="text" required id="input-title" placeholder="Title*">
                     </li>
                     <li>
-                        <input type="text" required id="author" placeholder="Author*">
+                        <input type="text" required id="input-author" placeholder="Author*">
                     </li>
                     <li>
-                        <input type="text" required id="pages" placeholder="Number of pages*">
+                        <input type="number" required id="input-pages" placeholder="Number of pages*">
                     </li>
                     <li>
-                        <label for="read">I've read this book*</label>
-                        <input type="checkbox" id="read">
+                        <label for="input-read">I've read this book*</label>
+                        <input type="checkbox" id="input-read">
                     </li>
                     <li>
                         <button type="button" id="btn-add">Add book</button>
