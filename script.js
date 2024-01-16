@@ -10,6 +10,11 @@ function Book(title, author, pages, read) {
     };
 }
 
+//Toggles between read and not read
+Book.prototype.swapReadStatus = function() {
+    this.read = !this.read;
+}
+
 //Add display/hide form
 const form = document.getElementById("popup-background");
 
@@ -81,6 +86,7 @@ function displayBooks() {
             read.textContent = "Not Read";
             read.className = "not-read";
         }
+        read.addEventListener("click", toggleRead);
         
         newBook.appendChild(read);
 
@@ -88,15 +94,18 @@ function displayBooks() {
     });
 }
 
-function toggleRead(index) {
-    if(e.read) {
-        e.read = false;
-        button.className = "not-read";
-        button.textContent = "Not Read";
+//Toggle read function
+function toggleRead(e) {
+    const index = e.target.parentElement.dataset.indexNumber;
+
+    myLibrary[index].swapReadStatus();
+
+    if(myLibrary[index].read) {
+        e.target.className = "";
+        e.target.textContent = "Read";       
     } else {
-        e.read = true;
-        button.className = "";
-        button.textContent = "Read";
+        e.target.className = "not-read";
+        e.target.textContent = "Not Read";
     }
 }
 
