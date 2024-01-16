@@ -54,7 +54,7 @@ addBook.addEventListener("click", addBookToLibrary);
 //Initializes a book div for every book found in the array and appends it to MyLibrary;
 function displayBooks() {
     const content = document.querySelector(".content");
-    let newBook, title, author, pages, read;
+    let newBook, title, author, pages, read, close;
     let index = 0;
 
     myLibrary.forEach((e) => {
@@ -87,11 +87,25 @@ function displayBooks() {
             read.className = "not-read";
         }
         read.addEventListener("click", toggleRead);
-        
         newBook.appendChild(read);
 
+        close = document.createElement("a");
+        close.id = "close";
+        close.href = "javascript:void(0)";
+        close.innerHTML = "&#10006;";
+        close.addEventListener("click", deleteBook);
+        newBook.appendChild(close);
+        
         content.appendChild(newBook);
     });
+}
+
+function deleteBook(e) {
+    const index = e.target.parentElement.dataset.indexNumber;
+
+    myLibrary.splice(index, 1);
+
+    populateContent();
 }
 
 //Toggle read function
